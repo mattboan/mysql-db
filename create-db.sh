@@ -18,7 +18,7 @@ docker network create $db_network
 docker volume create $db_volume
 
 # Create and run the new docker image
-docker run -v $db_volume:/var/lib/mysql --network=db_network -p 3306:3306 --detach --env MARIA_DATABASE=$db_name --env MARIA_USER=$db_user_name --env MARIADB_PASSWORD=$db_password --env MARIADB_ROOT_PASSWORD=$db_root_password --name $db_name mariadb:latest
+docker run -v $db_volume:/var/lib/mysql --network=$db_network -p 3306:3306 --detach --env MARIA_DATABASE=$db_name --env MARIA_USER=$db_user_name --env MARIADB_PASSWORD=$db_password --env MARIADB_ROOT_PASSWORD=$db_root_password --name $db_name mariadb:latest
 
 # Exit
 echo 'Done!'
