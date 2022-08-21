@@ -1,4 +1,5 @@
-cd ..
+#! /bin/bash
+
 
 # Getting the database name from the user
 
